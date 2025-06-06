@@ -252,10 +252,10 @@ perf: Optimize rendering for low-end devices
 
 | 설정 | GTX 1060 | RTX 3070 | RTX 4080 |
 |------|----------|----------|----------|
-| Low | 45-60 FPS | 120+ FPS | 120+ FPS |
-| Medium | 30-45 FPS | 80-100 FPS | 120+ FPS |
-| High | 20-30 FPS | 60-80 FPS | 100-120 FPS |
-| Ultra | N/A | 45-60 FPS | 80-100 FPS |
+| Low | NULL | NULL | NULL |
+| Medium | NULL | NULL | NULL |
+| High | NULL | NULL | NULL |
+| Ultra | N/A | NULL | NULL |
 
 ## 🔄 업데이트 로그
 
