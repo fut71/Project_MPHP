@@ -1,0 +1,92 @@
+name: 🔧 Refactor
+description: 코드 리팩토링이나 구조 개선을 제안할 때 사용하세요
+title: "[REFACTOR] "
+labels: ["refactor", "technical-debt"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        코드 개선 제안을 해주셔서 감사합니다. 리팩토링의 목적과 범위를 명확히 해주세요.
+
+  - type: textarea
+    id: refactor-target
+    attributes:
+      label: 🎯 리팩토링 대상
+      description: 어떤 부분을 리팩토링하고 싶나요?
+      placeholder: 파일명, 클래스명, 함수명 등 구체적으로 명시
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-issues
+    attributes:
+      label: ❌ 현재 문제점
+      description: 현재 코드의 어떤 부분이 문제인가요?
+      placeholder: |
+        예시:
+        - 코드 중복이 많음
+        - 가독성이 떨어짐
+        - 성능 이슈
+        - 유지보수가 어려움
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-changes
+    attributes:
+      label: 💡 제안하는 변경사항
+      description: 어떻게 개선하고 싶나요?
+      placeholder: 구체적인 리팩토링 방향과 방법
+    validations:
+      required: true
+
+  - type: dropdown
+    id: refactor-type
+    attributes:
+      label: 🔧 리팩토링 유형
+      description: 어떤 종류의 리팩토링인가요?
+      options:
+        - Code Structure (코드 구조 개선)
+        - Performance (성능 최적화)
+        - Readability (가독성 향상)
+        - Maintainability (유지보수성 향상)
+        - Architecture (아키텍처 개선)
+        - Dependencies (의존성 정리)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: 📊 영향 범위
+      description: 변경사항의 영향 범위는?
+      options:
+        - Small (단일 파일/함수)
+        - Medium (여러 파일/모듈)
+        - Large (전체 프로젝트)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: breaking-changes
+    attributes:
+      label: ⚠️ Breaking Changes
+      options:
+        - label: 이 리팩토링은 Breaking Change를 포함합니다
+        - label: API 변경이 필요합니다
+        - label: 데이터베이스 마이그레이션이 필요합니다
+
+  - type: textarea
+    id: testing-plan
+    attributes:
+      label: 🧪 테스트 계획
+      description: 리팩토링 후 어떻게 테스트할 계획인가요?
+      placeholder: 기존 테스트 수정, 새로운 테스트 추가 등
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: 📝 추가 메모
+      description: 참고사항이나 관련 이슈
+      placeholder: 관련 PR, 이슈 번호 또는 참고 자료

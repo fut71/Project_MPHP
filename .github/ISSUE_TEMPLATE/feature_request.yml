@@ -1,0 +1,75 @@
+name: ✨ Feature Request
+description: 새로운 기능이나 개선사항을 제안할 때 사용하세요
+title: "[FEATURE] "
+labels: ["enhancement", "needs-review"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        새로운 기능 제안을 해주셔서 감사합니다! 구체적인 정보를 제공해주시면 더 나은 검토가 가능합니다.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: ✨ 기능 설명
+      description: 제안하고자 하는 기능에 대해 자세히 설명해주세요
+      placeholder: 어떤 기능을 원하시나요?
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-solution
+    attributes:
+      label: 🎯 해결하고자 하는 문제
+      description: 이 기능이 어떤 문제를 해결하나요?
+      placeholder: 현재 어떤 불편함이나 제약사항이 있나요?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: 💡 제안하는 해결책
+      description: 어떻게 구현되었으면 좋겠나요?
+      placeholder: 구체적인 구현 방법이나 UI/UX 아이디어
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 🔄 대안
+      description: 고려해본 다른 해결책이 있나요?
+      placeholder: 다른 방법들과 왜 제안한 방법이 더 좋은지
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📊 우선순위
+      description: 이 기능의 중요도는?
+      options:
+        - High (핵심 기능)
+        - Medium (유용한 기능)
+        - Low (부가 기능)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: user-type
+    attributes:
+      label: 👥 대상 사용자
+      description: 어떤 사용자들에게 도움이 될까요?
+      options:
+        - label: 신규 사용자
+        - label: 기존 사용자
+        - label: 관리자
+        - label: 개발자
+        - label: 모든 사용자
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📎 추가 정보
+      description: 참고 자료, mockup, 관련 링크 등
+      placeholder: 참고할 만한 다른 서비스나 자료가 있다면 공유해주세요

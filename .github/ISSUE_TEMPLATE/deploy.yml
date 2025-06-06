@@ -1,0 +1,125 @@
+name: 🚀 Deploy
+description: 배포 관련 작업이나 문제를 보고할 때 사용하세요
+title: "[DEPLOY] "
+labels: ["deploy", "ops"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        배포 관련 이슈를 생성해주셔서 감사합니다. 배포 환경과 상세 정보를 제공해주세요.
+
+  - type: dropdown
+    id: deploy-type
+    attributes:
+      label: 🚀 배포 유형
+      description: 어떤 종류의 배포 작업인가요?
+      options:
+        - New Release (새 버전 배포)
+        - Hotfix (긴급 수정)
+        - Rollback (롤백)
+        - Configuration Change (설정 변경)
+        - Infrastructure (인프라 변경)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: 🌍 배포 환경
+      description: 어떤 환경에 배포하나요?
+      options:
+        - Production (운영)
+        - Staging (스테이징)
+        - Development (개발)
+        - QA (테스트)
+    validations:
+      required: true
+
+  - type: textarea
+    id: deploy-description
+    attributes:
+      label: 📋 배포 내용
+      description: 무엇을 배포하거나 변경하나요?
+      placeholder: |
+        예시:
+        - v2.1.0 버전 배포
+        - 데이터베이스 스키마 업데이트
+        - 새로운 API 엔드포인트 추가
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 🏷️ 버전
+      description: 배포할 버전이나 커밋 해시
+      placeholder: v2.1.0 또는 commit hash
+    validations:
+      required: true
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: 📝 주요 변경사항
+      description: 이번 배포에 포함된 주요 변경사항들
+      placeholder: |
+        - 새로운 기능 추가
+        - 버그 수정
+        - 성능 개선
+        - 보안 패치
+
+  - type: checkboxes
+    id: pre-deploy-checklist
+    attributes:
+      label: ✅ 배포 전 체크리스트
+      description: 배포 전 확인사항
+      options:
+        - label: 코드 리뷰 완료
+        - label: 테스트 통과 확인
+        - label: 데이터베이스 백업 완료
+        - label: 모니터링 시스템 준비
+        - label: 롤백 계획 수립
+        - label: 관련 팀 알림 완료
+
+  - type: textarea
+    id: rollback-plan
+    attributes:
+      label: 🔄 롤백 계획
+      description: 문제 발생 시 롤백 방법
+      placeholder: 어떻게 이전 버전으로 되돌릴 것인가?
+
+  - type: input
+    id: deploy-time
+    attributes:
+      label: ⏰ 배포 예정 시간
+      description: 언제 배포할 예정인가요?
+      placeholder: 2024-12-15 02:00 KST
+
+  - type: textarea
+    id: impact-analysis
+    attributes:
+      label: 📊 영향 분석
+      description: 이 배포가 사용자나 시스템에 미칠 영향
+      placeholder: |
+        - 다운타임: 예상 5분
+        - 영향받는 기능: 로그인, 결제
+        - 사용자 알림 필요 여부
+
+  - type: textarea
+    id: monitoring
+    attributes:
+      label: 📈 모니터링 계획
+      description: 배포 후 모니터링할 지표들
+      placeholder: |
+        - 응답시간
+        - 에러율
+        - CPU/메모리 사용량
+        - 사용자 활동
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: 📎 추가 정보
+      description: 기타 참고사항
+      placeholder: 관련 문서, 의존성, 특별 주의사항 등
